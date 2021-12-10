@@ -38,7 +38,7 @@ export default function Navbar() {
           <GiHamburgerMenu className='text-2xl' />
         </button>
       </div>
-      <ul className={`md:hidden ${active && 'hidden'}`}>
+      <ul className={`md:hidden ${active ? '' : 'hidden'}`}>
         <li className='text-sm hover:bg-gray-300 p-2'>Home</li>
         <li className='text-sm hover:bg-gray-300 p-2'>Shop</li>
         <li className='text-sm hover:bg-gray-300 p-2'>Cart</li>
