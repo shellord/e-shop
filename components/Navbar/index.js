@@ -24,7 +24,7 @@ export default function Navbar() {
           <AiOutlineShop className='text-blue-500 text-3xl' />
           <span className='pl-2 text-xl font-bold'> e-shop</span>
         </div>
-        <ul className='md:flex items-center space-x-5 '>
+        <ul className='flex items-center space-x-5'>
           <li className='hover:text-blue-500 font-light text-lg hidden md:block'>
             <Link href='#'>HOME</Link>
           </li>
