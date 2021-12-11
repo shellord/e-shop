@@ -13,7 +13,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className='bg-white  mx-auto shadow-md'>
+    <nav className='bg-white  mx-auto shadow-md max-w-5xl fixed left-0 right-0 z-20'>
       <div className='flex md:justify-between p-5'>
         <button
           className='md:hidden flex items-center'
@@ -46,7 +46,7 @@ export default function Navbar() {
       <ul
         className={`md:hidden ${
           active ? '' : 'hidden'
-        } fixed bg-white w-screen z-10 h-screen`}
+        } absolute bg-white w-screen z-10 h-screen`}
       >
         <li className='text-lg hover:bg-gray-300 p-3'>Home</li>
         <li className='text-lg hover:bg-gray-300 p-3'>Shop</li>

@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <section className='flex px-10 bg-blue-200 '>
+    <section className='flex px-10 bg-blue-200 pt-20 flex-1 '>
       <div className='py-10 flex justify-between flex-1'>
         <div className='flex flex-col justify-center'>
           <p className='text-lg font-serif'>Winter Fashion</p>
