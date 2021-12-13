@@ -4,8 +4,10 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { CartIcon } from '../../components'
 import { useState } from 'react'
 import { GrClose } from 'react-icons/gr'
+import { useSelector } from 'react-redux'
 
 export default function Navbar() {
+  const cartQuantity = useSelector((state) => state.cart.totalQuantity)
   const [active, setActive] = useState(false)
 
   const _handleOnClick = () => {
@@ -25,10 +27,12 @@ export default function Navbar() {
             <GiHamburgerMenu className='text-2xl' />
           )}
         </button>
-        <div className='flex items-center flex-1 md:flex-none justify-center'>
-          <AiOutlineShop className='text-blue-500 text-3xl' />
-          <span className='pl-2 text-xl font-bold'> e-shop</span>
-        </div>
+        <Link href='/' passHref>
+          <div className='flex items-center flex-1 md:flex-none justify-center cursor-pointer'>
+            <AiOutlineShop className='text-blue-500 text-3xl' />
+            <span className='pl-2 text-xl font-bold'> e-shop</span>
+          </div>
+        </Link>
         <ul className='flex items-center space-x-10'>
           <li className='hover:text-blue-500 font-light text-lg hidden md:block'>
             <Link href='/'>HOME</Link>
@@ -37,8 +41,10 @@ export default function Navbar() {
             <Link href='/shop'>SHOP</Link>
           </li>
           <li className='hover:text-blue-500 '>
-            <Link href='/shop' passHref>
-              <CartIcon count={10} />
+            <Link href='/cart'>
+              <a>
+                <CartIcon count={cartQuantity} />
+              </a>
             </Link>
           </li>
         </ul>
