@@ -31,13 +31,13 @@ export default function Navbar() {
         </div>
         <ul className='flex items-center space-x-10'>
           <li className='hover:text-blue-500 font-light text-lg hidden md:block'>
-            <Link href='#'>HOME</Link>
+            <Link href='/'>HOME</Link>
           </li>
           <li className='hover:text-blue-500 font-light text-lg hidden md:block'>
-            <Link href='#'>SHOP</Link>
+            <Link href='/shop'>SHOP</Link>
           </li>
           <li className='hover:text-blue-500 '>
-            <Link href='#' passHref>
+            <Link href='/shop' passHref>
               <CartIcon count={10} />
             </Link>
           </li>
@@ -46,11 +46,30 @@ export default function Navbar() {
       <ul
         className={`md:hidden ${
           active ? '' : 'hidden'
-        } absolute bg-white w-screen z-10 h-screen`}
+        } absolute bg-white w-screen z-10 h-screen flex flex-col items-start flex-1`}
       >
-        <li className='text-lg hover:bg-gray-300 p-3'>Home</li>
-        <li className='text-lg hover:bg-gray-300 p-3'>Shop</li>
-        <li className='text-lg hover:bg-gray-300 p-3'>Cart</li>
+        <Link href='/' passHref>
+          <button
+            onClick={_handleOnClick}
+            className='w-full text-lg hover:bg-gray-300 p-3 flex'
+          >
+            <li className=''>Home</li>
+          </button>
+        </Link>
+        <Link href='/shop' passHref>
+          <button
+            onClick={_handleOnClick}
+            className='w-full text-lg hover:bg-gray-300 p-3 flex'
+          >
+            <li>Shop</li>
+          </button>
+        </Link>
+        <button
+          onClick={_handleOnClick}
+          className='w-full text-lg hover:bg-gray-300 p-3 flex'
+        >
+          <li>Cart</li>
+        </button>
       </ul>
     </nav>
   )
