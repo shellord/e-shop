@@ -1,5 +1,5 @@
 import { ProductCard } from '../../components'
-import products from '../../data/products'
+import products from '../../Data/products'
 
 export default function Shop() {
   return (
