@@ -51,10 +51,11 @@ export default function Cart() {
           </div>
         </div>
       ))}
-      {/* <div className='flex justify-end bg-red-500 pr-10 justify-between'>
-        <span>${cart.totalQuantity}</span>
-        <span>{cart.totalPrice}</span>
-      </div> */}
+      <div className='flex justify-end pr-10'>
+        <span className='font-bold'>
+          Total Price ${Math.round(cart.totalPrice)}
+        </span>
+      </div>
     </div>
   )
 }

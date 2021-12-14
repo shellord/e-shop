@@ -56,12 +56,11 @@ export const cartSlice = createSlice({
       const cartItem = state.cartItems.find(
         (cartItem) => cartItem.id === item.id
       )
+      cartItem.quantity--
+      state.totalQuantity--
+      state.totalPrice -= item.price
       if (cartItem.quantity === 0) {
         state.cartItems.splice(state.cartItems.indexOf(cartItem), 1)
-      } else {
-        cartItem.quantity--
-        state.totalQuantity--
-        state.totalPrice -= item.price
       }
       localStorage.setItem('cartItems', JSON.stringify(state.cartItems))
     },
